@@ -137,6 +137,7 @@ select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:u
 <header>
   <h1>🎨 Logo <span>→</span> Code</h1>
   <div class="header-actions">
+    <button class="api-btn" onclick="document.getElementById('helpModal').style.display='flex'">❓ How to Use</button>
     <button class="api-btn" id="apiBtn"><span class="api-dot off" id="apiDot"></span>API Key</button>
   </div>
 </header>
@@ -211,6 +212,54 @@ select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:u
       <p>Configure your brand and hit Generate</p>
     </div>
     <div class="preview-grid" id="previewGrid" style="display:none"></div>
+  </div>
+</div>
+
+<!-- Help Modal -->
+<div id="helpModal" class="modal" style="display:none" onclick="if(event.target===this)this.style.display='none'">
+  <div class="modal-content" style="max-width:640px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <h3>How to Use Logo → Code</h3>
+      <button onclick="document.getElementById('helpModal').style.display='none'" style="background:none;border:none;color:#888;font-size:22px;cursor:pointer">&times;</button>
+    </div>
+    <div style="font-size:13px;line-height:1.7;color:#bbb">
+      <h4 style="color:#fff;margin:14px 0 6px">📸 Step 1: Get Logo Inspiration</h4>
+      <p>Screenshot logos you like from anywhere — websites, apps, brand guidelines, Pinterest, Dribbble.</p>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;margin:8px 0;font-size:12px">
+        <strong style="color:var(--accent)">How to screenshot:</strong><br>
+        • <strong>Mac:</strong> Cmd + Shift + 4 → drag to select the logo<br>
+        • <strong>Windows:</strong> Win + Shift + S → drag to select<br>
+        • <strong>iPhone:</strong> Side button + Volume up → crop to the logo<br>
+        • <strong>Android:</strong> Power + Volume down<br>
+        • <strong>From web:</strong> Right-click logo → "Save image as" or screenshot it<br>
+        • <strong>Google Images:</strong> Search "minimal tech logos" → screenshot the ones you like
+      </div>
+      <p style="font-size:11px;color:#888">💡 Drop up to 8 logos. Claude will analyze shapes, colors, negative space, and style from all of them.</p>
+
+      <h4 style="color:#fff;margin:14px 0 6px">✏️ Step 2: Set Your Brand</h4>
+      <p><strong>Brand name:</strong> Your company/project name — this gets embedded in the logo<br>
+      <strong>Industry:</strong> Helps Claude pick appropriate visual language<br>
+      <strong>Style:</strong> Pick vibes — Minimal, Bold, Geometric, Retro, etc. Select multiple<br>
+      <strong>Colors:</strong> Pick primary/secondary/accent, or toggle "Auto" to extract from your inspiration images</p>
+
+      <h4 style="color:#fff;margin:14px 0 6px">🎨 Step 3: Generate</h4>
+      <p>Choose 3-6 variations. Each one is a <strong>different concept</strong> — wordmark, monogram, icon+text, abstract mark, etc. Not just color swaps.</p>
+
+      <h4 style="color:#fff;margin:14px 0 6px">📦 Step 4: Preview & Export</h4>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;margin:8px 0;font-size:12px">
+        • <strong>Multi-size preview:</strong> See each logo at 32px (favicon), 64px, 200px, and 400px<br>
+        • <strong>Light/dark toggle:</strong> Test how it looks on both backgrounds<br>
+        • <strong>Copy SVG:</strong> Raw SVG code for any project<br>
+        • <strong>Download .svg:</strong> Vector file for designers<br>
+        • <strong>React JSX:</strong> Copy as a React component<br>
+        • <strong>Download PNG:</strong> Rasterized at 1024px<br>
+        • <strong>Regenerate:</strong> Redo a single variation you don't love<br>
+        • <strong>Refine:</strong> "Make #3 more minimal" or "Try #2 in navy blue"
+      </div>
+
+      <h4 style="color:#fff;margin:14px 0 6px">🔑 API Key</h4>
+      <p>Get one from <a href="https://console.anthropic.com" target="_blank" style="color:var(--accent)">console.anthropic.com</a>. Stored locally in your browser — never leaves except to Anthropic's API.</p>
+    </div>
   </div>
 </div>
 
